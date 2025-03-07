@@ -1,0 +1,130 @@
+###User's Requests
+
+###Registration
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "empid":"23071A05H9",
+    "username":"Apoorva Sai Karthikey",
+    "password":"ask01",
+    "teamno":1
+}
+
+###Signin
+POST http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "empid":"23071A05H9",
+    "password":"ask01"
+}
+
+###Display all users when teamno is specified
+GET http://localhost:4000/user-api/users/1
+
+###Publications Data
+POST http://localhost:4000/user-api/publications
+Content-Type: application/json
+
+{
+    "username":"Apoorva",
+    "typeOfPublication":"Journal",
+    "nameOfJournal":"TheJournalOfReactMongoAndNode",
+    "titleOfPaper":"Xcelifiee",
+    "dateOfPublication":"2024-11-14",
+    "indexing":"Scopus",
+    "authorPosition":1,
+    "linkForProof":"https://www.youtube.com/watch?v=ANk4fmRNyuE"
+}
+
+###get all the publications data
+GET http://localhost:4000/user-api/publicationsData
+
+
+
+###Update the users with titleOfPaper
+PUT http://localhost:4000/user-api/add-title
+Content-Type: application/json
+
+{
+    "username":"Apoorva",
+    "typeOfPublication":"Journal",
+    "nameOfJournal":"TheJournalOfReactMongoAndNode",
+    "titleOfPaper":"Xcelifiee",
+    "dateOfPublication":"2024-11-14",
+    "indexing":"Scopus",
+    "authorPosition":1,
+    "linkForProof":"https://www.youtube.com/watch?v=ANk4fmRNyuE"
+}
+
+###Add patent data to db
+POST http://localhost:4000/user-api/patents
+Content-Type: application/json
+
+{
+    "titleOfPatent":"XcelPatent",
+    "nameOfInventor":"AizenSosuke",
+    "status":"Approved"
+}
+
+###Add fundingProps data to db
+POST http://localhost:4000/user-api/fundprops
+Content-Type: application/json
+
+{
+    "titleOfProposal":"AttackOnMoney",
+    "detailsOfPiCopi":"MikasaAckerman,ErenYaeger",
+    "fundingAgency":"LeviStudios",
+    "amount":10000,
+    "fundStatus":"Applied"
+}
+
+###get all users data sort by teamnos
+GET http://localhost:4000/user-api/usersSortData
+
+###get publications data sort by empid
+GET http://localhost:4000/user-api/publicationsSortData
+
+###get publications data sort by teamno
+GET http://localhost:4000/user-api/publicationsSortTeamData
+
+###get patents sort by teamno
+GET http://localhost:4000/user-api/patentsSortData
+
+###get fundingPropsData sort by teamno
+GET http://localhost:4000/user-api/fundingPropsSortData
+
+###delete user based on empid
+DELETE http://localhost:4000/user-api/deleteUser/22071A05H9
+
+###delete publication based on empid
+DELETE http://localhost:4000/user-api/deletePublications/22071A05H9
+
+###delete publications based on titleOfPaper
+DELETE http://localhost:4000/user-api/deletePublications/ApoorvaSai
+
+###edit data acc to empid
+PUT http://localhost:4000/user-api/editForms/23071A05H9
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "empid":"23071A05H9",
+    "username":"Apoorva Sai Karthikey",
+    "password":"ask01",
+    "teamno":1
+}
+
+###get all publications by teamno
+GET http://localhost:4000/user-api/getPublications/1
+
+###get all patents by teamno
+GET http://localhost:4000/user-api/getPatents/1
+
+###get all funding Proposals by teamno
+GET http://localhost:4000/user-api/getFundingProposals/1
+
+
